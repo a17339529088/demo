@@ -1,5 +1,7 @@
 package com.example.demo.util;
 
+import org.springframework.stereotype.Component;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -10,6 +12,7 @@ import java.util.Random;
  * @author xiaoyang
  * @date 2022/7/24
  */
+@Component
 public class SpiderUtil {
     private final List<String> userAgent;
 

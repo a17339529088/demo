@@ -1,6 +1,7 @@
 package com.example.demo.controller;
 
 
+import com.example.demo.util.DateUtil;
 import com.example.demo.util.Md5Utils;
 import com.example.demo.util.SpiderUtil;
 import lombok.extern.slf4j.Slf4j;
@@ -66,7 +67,7 @@ public class GongShi implements ApplicationRunner {
             userData.put("token", document.select("#token").val());
             Thread.sleep(spiderUtil.getRandomTime());
         }
-        System.out.println(cookies);
+
         return cookies;
     }
 
@@ -113,9 +114,7 @@ public class GongShi implements ApplicationRunner {
 
     @Override
         public void run(ApplicationArguments args) throws Exception {
-        System.out.println(1111);
-/*
-            // 登录系统 获取cookie
+        // 登录系统 获取cookie
             Map<String, String> cookies = userLogin();
             log.info("cookies: {}", cookies);
             // 访问主页
@@ -132,7 +131,7 @@ public class GongShi implements ApplicationRunner {
             String member_id = document.select("#member_id").attr("value");
             log.info("sign: {}, member_id: {}", sign, member_id);
             this.addWorkHours(sign, member_id, DateUtil.toStr(new Date(), "yyyy-MM-dd"), cookies);
-*/
+
         System.exit(0);
     }
 }
