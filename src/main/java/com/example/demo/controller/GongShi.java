@@ -32,6 +32,19 @@ public class GongShi implements ApplicationRunner {
     private String USER_NAME;
     @Value("${user.password}")
     private String PASSWORD;
+    @Value("${user.workhours}")
+    private String WORKHOURS;
+    @Value("${user.projectid}")
+    private String PROJECT_ID;
+    @Value("${user.classid}")
+    private String CLASS_ID;
+    @Value("${user.describe}")
+    private String DESCRIBE;
+    @Value("${user.secondeclassid}")
+    private String SECONDE_CLASS_ID;
+    @Value("${user.trip}")
+    private String TRIP;
+
     @Autowired
     private SpiderUtil spiderUtil;
 
@@ -93,12 +106,13 @@ public class GongShi implements ApplicationRunner {
         data.put("WORK_DATE", time);
         data.put("sign", md5Sign);
         // 常量
-        data.put("PROJECT_ID", "6684");
-        data.put("CLASS_ID", "199");
-        data.put("SECONDE_CLASS_ID", "892");
-        data.put("WORKHOURS", "8.5");
-        data.put("DESCRIBE", "一键登录开发");
-        data.put("TRIP", "0");
+        data.put("PROJECT_ID", PROJECT_ID);
+        data.put("CLASS_ID",CLASS_ID);
+        data.put("CLASS_ID",CLASS_ID);
+        data.put("SECONDE_CLASS_ID", SECONDE_CLASS_ID);
+        data.put("WORKHOURS", WORKHOURS);
+        data.put("DESCRIBE", DESCRIBE);
+        data.put("TRIP", TRIP);
 
         String addUrl = "http://gs.lxgs:26800/WorkHoursSystem/workHoursAction.do?action=addWorkHours";
         Document post = Jsoup.connect(addUrl)

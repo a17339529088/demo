@@ -1,6 +1,19 @@
 server:
   port: 8082
 user:
+#  账号
   account: 123456
+#  密码
   password: 123
-
+#  工时
+  workhours: 8
+#  项目id
+  projectid: 6684
+#  项目阶段id
+  classid: 199
+#  项目阶段二级id
+  secondeclassid: 892
+#  工作内容
+  describe: 开发
+#  是否出差
+  trip: 0
